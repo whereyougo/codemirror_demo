@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/codemirror.css">
+    <link rel="stylesheet" href="css/eclipse.css">
+    <link rel="stylesheet" href="css/fullscreen.css">
+
+    <script src="js/codemirror.js"></script>
+    <script src="js/htmlmixed.js"></script>
+    <script src="js/xml.js"></script>
+    <script src="js/javascript.js"></script>
+    <script src="js/css.js"></script>
+    <script src="js/fullscreen.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<h1>use codemirror without vue</h1>
+<button type="button" onclick="switchFullScreen()">fullscreen</button>
+<textarea id="myTextarea"></textarea>
+<script>
+    let obj = document.getElementById("myTextarea");
+    let editor = CodeMirror.fromTextArea(obj,
+        {
+            lineNumbers: true,
+            mode:'htmlmixed',
+            theme:'eclipse',
+            tabSize:4,
+            extraKeys: {
+                "F11": function(cm) {
+                    cm.setOption("fullScreen", !cm.getOption("fullScreen"));
+                },
+                "Esc": function(cm) {
+                    if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);
+                }
+            }
+        });
+    function switchFullScreen(){
+        let nowStatus = editor.getOption("fullScreen");
+        console.log("nowStatus=",nowStatus);
+        editor.setOption("fullScreen", !nowStatus);
+        editor.focus();
+    }
+</script>
+</body>
+</html>

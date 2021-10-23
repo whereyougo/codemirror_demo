@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="nav">
+      <a href="/test.html">without vue</a>
       <router-link to="/test_01_FullScreen">FullScreen</router-link>
       <router-link to="/test_02_InitContent">InitContent</router-link>
     </div>
