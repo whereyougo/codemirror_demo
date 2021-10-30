@@ -2,8 +2,9 @@
   <div>
     <div class="nav">
       <a href="/test.html">without vue</a>
-      <router-link to="/test_01_FullScreen">FullScreen</router-link>
-      <router-link to="/test_02_InitContent">InitContent</router-link>
+      <router-link to="/test_01_FullScreen">FullScreen with error</router-link>
+      <router-link to="/test_02_InitContent">InitContent with error</router-link>
+      <router-link to="/test_03_InitContent">FullScreen no error</router-link>
     </div>
     <router-view></router-view>
   </div>
